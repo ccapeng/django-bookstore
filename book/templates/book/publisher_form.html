@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h2>
+	<a href="{% url 'publisher_list' %}">Publishers</a>: Edit
+</h2>
+<style>
+form label {width:4rem;text-align:right; margin-right:1rem}
+
+</style>
+<form method="post">{% csrf_token %}
+	<div class="mt-3 mb-3">
+  {{ form.as_p }}
+	</div>
+  <input type="submit" class="btn btn-primary" value="Submit" />
+</form>
+
+{% endblock %}
