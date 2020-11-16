@@ -22,7 +22,7 @@
 	{% if form.errors %}
 	<div class="mt-3 mb-3">
 		{%for k in form.errors %}
-		<div>
+		<div class="text-danger">
 			{{ form.errors|dict_key:k }}
 		</div>
 		{% endfor %}
