@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2><a href="{% url 'category_list' %}">Categories</a></h2>
+<h2><a href="{% url 'category_list' %}">Category</a></h2>
 <section class="mt-3 mb-3">
   <a href="/category/add/" class="btn btn-secondary">
     Add
@@ -11,23 +11,20 @@
 <section>
   <ul class="list-group">
     {% for category in category_list %}
-      <li class="list-group-item">
-        <div class="clearfix">
-          <div class="float-left">
-            <a href="{{ book.id }}">
-              {{ category.name }}
-            </a>
-          </div>
-          <div class="float-right">
-            <a href="/category/update/{{ category.id }}" class="btn btn-secondary">
-              Edit
-            </a>
-            <a href="/category/delete/{{ category.id }}" class="ml-3 btn btn-secondary">
-              Delete
-            </a>
-          </div>
+    <li class="list-group-item">
+      <div class="clearfix">
+        <div class="float-left">
+          <a href="/category/update/{{ category.id }}">
+            {{ category.name }}
+          </a>
         </div>
-      </li>
+        <div class="float-right">
+          <a href="/category/delete/{{ category.id }}" class="ml-3 btn btn-secondary">
+            Delete
+          </a>
+        </div>
+      </div>
+    </li>
     {% endfor %}
   </ul>
 </section>

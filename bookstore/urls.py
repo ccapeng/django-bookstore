@@ -25,29 +25,31 @@ from book.views import AuthorList, AuthorCreate, AuthorUpdate, AuthorDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', books),
-    # path('book/', books),
-    # path('book/add/', book_add),
-    #path('book/<int:id>/', BookList.as_view(), name='book_list'),
     path('', BookList.as_view(), name='book_list'),
     path('book/', BookList.as_view(), name='book_list'),
     path('book/add/', BookCreate.as_view(), name='book_form'),
     path('book/update/<slug:pk>/', BookUpdate.as_view(), name='book_form'),
-    path('book/delete/<slug:pk>/', BookDelete.as_view(), name='book_confirm_delete'),
+    path('book/delete/<slug:pk>/', BookDelete.as_view(),
+         name='book_confirm_delete'),
 
     path('category/', CategoryList.as_view(), name='category_list'),
     path('category/add/', CategoryCreate.as_view(), name='category_form'),
-    path('category/update/<slug:pk>/', CategoryUpdate.as_view(), name='category_form'),
-    path('category/delete/<slug:pk>/', CategoryDelete.as_view(), name='category_confirm_delete'),
+    path('category/update/<slug:pk>/',
+         CategoryUpdate.as_view(), name='category_form'),
+    path('category/delete/<slug:pk>/', CategoryDelete.as_view(),
+         name='category_confirm_delete'),
 
     path('publisher/', PublisherList.as_view(), name='publisher_list'),
     path('publisher/add/', PublisherCreate.as_view(), name='publisher_form'),
-    path('publisher/update/<slug:pk>/', PublisherUpdate.as_view(), name='publisher_form'),
-    path('publisher/delete/<slug:pk>/', PublisherDelete.as_view(), name='publisher_confirm_delete'),
+    path('publisher/update/<slug:pk>/',
+         PublisherUpdate.as_view(), name='publisher_form'),
+    path('publisher/delete/<slug:pk>/', PublisherDelete.as_view(),
+         name='publisher_confirm_delete'),
 
     path('author/', AuthorList.as_view(), name='author_list'),
     path('author/add/', AuthorCreate.as_view(), name='author_form'),
     path('author/update/<slug:pk>/', AuthorUpdate.as_view(), name='author_form'),
-    path('author/delete/<slug:pk>/', AuthorDelete.as_view(), name='author_confirm_delete'),
+    path('author/delete/<slug:pk>/', AuthorDelete.as_view(),
+         name='author_confirm_delete'),
 
 ]

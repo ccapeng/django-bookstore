@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2><a href="{% url 'publisher_list' %}">Publishers</a></h2>
+<h2><a href="{% url 'publisher_list' %}">Publisher</a></h2>
 <section class="mt-3 mb-3">
   <a href="/publisher/add/" class="btn btn-secondary">
     Add
@@ -11,23 +11,20 @@
 <section>
   <ul class="list-group">
     {% for publisher in publisher_list %}
-      <li class="list-group-item">
-        <div class="clearfix">
-          <div class="float-left">
-            <a href="{{ book.id }}">
-              {{ publisher.name }}
-            </a>
-          </div>
-          <div class="float-right">
-            <a href="/publisher/update/{{ publisher.id }}" class="btn btn-secondary">
-              Edit
-            </a>
-            <a href="/publisher/delete/{{ publisher.id }}" class="ml-3 btn btn-secondary">
-              Delete
-            </a>
-          </div>
+    <li class="list-group-item">
+      <div class="clearfix">
+        <div class="float-left">
+          <a href="/publisher/update/{{ publisher.id }}">
+            {{ publisher.name }}
+          </a>
         </div>
-      </li>
+        <div class="float-right">
+          <a href="/publisher/delete/{{ publisher.id }}" class="ml-3 btn btn-secondary">
+            Delete
+          </a>
+        </div>
+      </div>
+    </li>
     {% endfor %}
   </ul>
 </section>
