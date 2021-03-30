@@ -32,7 +32,7 @@ odfpy==1.4.1
 openpyxl==3.0.4
 packaging==20.4
 pipenv==2020.8.13
-Pygments==2.6.1
+Pygments==2.7.4
 pylint==2.3.1
 pymongo==3.8.0
 pyparsing==2.4.7
